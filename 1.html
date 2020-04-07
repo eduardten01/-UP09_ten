@@ -1,24 +1,24 @@
-<script>function question(num)
+<script>function guess_the_number(num)
 {
     let num1 = num;
-    number = prompt("Угадайте число от 1 до 100", "");
-    if (typeof input !== "object")
+    number = +prompt("Угадайте число от 1 до 100", "");
+    if (typeof number === "number")
     {
         if (((num1 =+ number) !== parseFloat(number)) || (!Number.isFinite(num)))
         {
-            input = prompt("Угадайте число от 1 до 100", "");
+            number = prompt("Угадайте число от 1 до 100", "");
         }
         if (!((num1 =+ number) !== parseFloat(number)) || !(!Number.isFinite(num)))
         {
             if (number > num)
             {
                 alert("Загаданное число меньше");
-                return question(num);
+                return guess_the_number(num);
             }
             else if (number < num)
             {
                 alert("Загаданное число больше");
-                return question(num);
+                return guess_the_number(num);
             }
             else if (number == num) 
             {
@@ -31,6 +31,5 @@
 }
 
 let num = Math.floor(Math.random() * 100) + 1;
-
-question(num);
+guess_the_number(num);
 </script>
